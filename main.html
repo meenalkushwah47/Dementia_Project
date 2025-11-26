@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dementia Prediction System</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1> Dementia Risk Assessment</h1>
+            <p class="subtitle">AI-Powered Health Screening Tool</p>
+        </header>
+
+        <div class="content-wrapper">
+            <form id="predictionForm">
+                <!-- Personal Information -->
+                <div class="form-section">
+                    <h2> Personal Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="Age">Age</label>
+                            <input type="number" id="Age" name="Age" min="0" max="120">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="Gender">Gender</label>
+                            <select id="Gender" name="Gender">
+                                <option value="">Select</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="Education_Level">Education Level</label>
+                            <select id="Education_Level" name="Education_Level">
+                                <option value="">Select</option>
+                                <option value="None">None</option>
+                                <option value="High School">High School</option>
+                                <option value="Bachelor's">Bachelor's</option>
+                                <option value="Master's">Master's</option>
+                                <option value="PhD">PhD</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="Dominant_Hand">Dominant Hand</label>
+                            <select id="Dominant_Hand" name="Dominant_Hand">
+                                <option value="">Select</option>
+                                <option value="Right">Right</option>
+                                <option value="Left">Left</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health Metrics -->
+                <div class="form-section">
+                    <h2>Health Metrics</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="Weight">Weight (kg)</label>
+                            <input type="number" id="Weight" name="Weight" step="0.1" min="0">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="HeartRate">Heart Rate (bpm)</label>
+                            <input type="number" id="HeartRate" name="HeartRate" min="0">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="BloodOxygenLevel">Blood Oxygen Level (%)</label>
+                            <input type="number" id="BloodOxygenLevel" name="BloodOxygenLevel" step="0.01" min="0" max="100">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="BodyTemperature">Body Temperature (°C)</label>
+                            <input type="number" id="BodyTemperature" name="BodyTemperature" step="0.01" min="0">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="AlcoholLevel">Alcohol Level</label>
+                            <input type="number" id="AlcoholLevel" name="AlcoholLevel" step="0.001" min="0" max="1">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="MRI_Delay">MRI Delay (days)</label>
+                            <input type="number" id="MRI_Delay" name="MRI_Delay" step="0.1" min="0">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medical History -->
+                <div class="form-section">
+                    <h2>🩺 Medical History</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="Diabetic">Diabetic</label>
+                            <select id="Diabetic" name="Diabetic">
+                                <option value="">Select</option>
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="Family_History">Family History</label>
+                            <select id="Family_History" name="Family_History">
+                                <option value="">Select</option>
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="Chronic_Health_Conditions">Chronic Health Conditions</label>
+                            <select id="Chronic_Health_Conditions" name="Chronic_Health_Conditions">
+                                <option value="">Select</option>
+                                <option value="None">None</option>
+                                <option value="Diabetes">Diabetes</option>
+                                <option value="Heart Disease">Heart Disease</option>
+                                <option value="Hypertension">Hypertension</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="Depression_Status">Depression Status</label>
+                            <select id="Depression_Status" name="Depression_Status">
+                                <option value="">Select</option>
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lifestyle -->
+                <div class="form-section">
+                    <h2> Lifestyle</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="Smoking_Status">Smoking Status</label>
+                            <select id="Smoking_Status" name="Smoking_Status">
+                                <option value="">Select</option>
+                                <option value="Never Smoked">Never Smoked</option>
+                                <option value="Former Smoker">Former Smoker</option>
+                                <option value="Current Smoker">Current Smoker</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="Physical_Activity">Physical Activity</label>
+                            <select id="Physical_Activity" name="Physical_Activity">
+                                <option value="">Select</option>
+                                <option value="Sedentary">Sedentary</option>
+                                <option value="Mild Activity">Mild Activity</option>
+                                <option value="Moderate Activity">Moderate Activity</option>
+                                <option value="Vigorous Activity">Vigorous Activity</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="Nutrition_Diet">Nutrition Diet</label>
+                            <select id="Nutrition_Diet" name="Nutrition_Diet">
+                                <option value="">Select</option>
+                                <option value="Balanced Diet">Balanced Diet</option>
+                                <option value="Low-Carb Diet">Low-Carb Diet</option>
+                                <option value="Mediterranean Diet">Mediterranean Diet</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="Sleep_Quality">Sleep Quality</label>
+                            <select id="Sleep_Quality" name="Sleep_Quality">
+                                <option value="">Select</option>
+                                <option value="Poor">Poor</option>
+                                <option value="Good">Good</option>
+                                <option value="Excellent">Excellent</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medication & Tests -->
+                <div class="form-section">
+                    <h2>Medication & Tests</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="Prescription">Prescription</label>
+                            <select id="Prescription" name="Prescription">
+                                <option value="">Select</option>
+                                <option value="None">None</option>
+                                <option value="Donepezil">Donepezil</option>
+                                <option value="Galantamine">Galantamine</option>
+                                <option value="Memantine">Memantine</option>
+                                <option value="Rivastigmine">Rivastigmine</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="Dosage_in_mg">Dosage (mg)</label>
+                            <input type="number" id="Dosage_in_mg" name="Dosage_in_mg" step="0.1" min="0">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="Medication_History">Medication History</label>
+                            <select id="Medication_History" name="Medication_History">
+                                <option value="">Select</option>
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="APOE_ε4">APOE ε4 Allele</label>
+                            <select id="APOE_ε4" name="APOE_ε4">
+                                <option value="">Select</option>
+                                <option value="Negative">Negative</option>
+                                <option value="Positive">Positive</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="Cognitive_Test_Scores">Cognitive Test Score (0-10)</label>
+                            <input type="number" id="Cognitive_Test_Scores" name="Cognitive_Test_Scores" min="0" max="10">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">🔍 Predict Risk</button>
+            </form>
+
+            <!-- Results Section -->
+            <div id="results" class="results-section" style="display: none;">
+                <h2>Prediction Results</h2>
+                <div class="result-card">
+                    <div class="result-display">
+                        <div class="result-icon" id="resultIcon"></div>
+                        <h3 id="resultText"></h3>
+                        <p id="resultDescription"></p>
+                    </div>
+                    <div class="disclaimer">
+                        <p><strong> Disclaimer:</strong> This is a predictive tool for educational purposes only and should not be used as a substitute for professional medical advice. Please consult with healthcare professionals for proper diagnosis and treatment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
